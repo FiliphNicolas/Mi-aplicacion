@@ -8,11 +8,11 @@ La siguientes es una lista de las funcionalidades disponibles para el usuario de
 El usuario ingresa peso en kilogramos y altura en centímetros.
 ✔ Cálculo del IMC:
 
-Se usa la fórmula:
-IMC = peso / (altura * altura)
- 
 La altura ingresada en cm se convierte a metros (altura / 100).
 ✔ Clasificación del IMC:
+
+Se usa la fórmula:
+IMC = peso / (altura * altura)
 
 El resultado se compara con la tabla de categorías (Desnutrición, Peso Ideal, Sobrepeso, Obesidad I, II, III, IV).
 ✔ Manejo de errores:
@@ -25,6 +25,3 @@ Se muestra un mensaje de error en caso de datos inválidos.
 Usa EditText para entrada de datos.
 Button para calcular.
 TextView para mostrar el resultado y la categoría.
-
-2. ...
-...
