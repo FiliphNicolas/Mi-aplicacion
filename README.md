@@ -1,6 +1,5 @@
-# Nombre de la aplicación
+# Calcular imc
 
-Reemplace este texto con una descripción de su aplicación.
 
 Author: Filiph Nicolas Suan Yara
 
