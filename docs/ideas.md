@@ -15,12 +15,4 @@ Aplicaciones similares:
 - https://play.google.com/store/apps/details?id=com.appovo.bmicalculator&hl=es_CO 
 - https://play.google.com/store/apps/details?id=bmicalculator.bmi.calculator.weightlosstracker&hl=es_CO
 
-## Idea 2
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Aplicaciones similares:
-
-- ...
-- ...
-- ...
