@@ -41,14 +41,25 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 R.id.btnParenthesisOpen, R.id.btnParenthesisClose -> {
-                    tvInput.append(view.text)
-                    lastNumeric = false
-                }
-                else -> {
+                    // Si el texto actual es "0", reemplazarlo con el paréntesis
                     if (tvInput.text.toString() == "0") {
                         tvInput.text = view.text
                     } else {
                         tvInput.append(view.text)
+                    }
+                    lastNumeric = false
+                    lastDot = false
+                }
+                else -> {
+                    // Si el texto actual es "0" y se presiona un número, reemplazar el "0"
+                    if (tvInput.text.toString() == "0" && view.text.toString().matches(Regex("[0-9]"))) {
+                        tvInput.text = view.text
+                    } else {
+                        tvInput.append(view.text)
+                    }
+                    // Reiniciar lastDot si se presiona un operador
+                    if (view.text.toString() in listOf("+", "-", "*", "/")) {
+                        lastDot = false
                     }
                     lastNumeric = true
                 }
@@ -117,10 +128,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             fun parseFactor(): Double {
-                if (eat('+'.toInt())) return parseFactor()
-                if (eat('-'.toInt())) return -parseFactor()
+                // Manejar operadores unarios (+ y -)
+                if (eat('+'.toInt())) return parseFactor() // Ignorar el + unario
+                if (eat('-'.toInt())) return -parseFactor() // Aplicar el - unario
+
                 var x: Double
                 val startPos = pos
+
                 if (eat('('.toInt())) {
                     x = parseExpression()
                     eat(')'.toInt())
@@ -131,17 +145,6 @@ class MainActivity : AppCompatActivity() {
                     throw RuntimeException("Unexpected: " + ch.toChar())
                 }
                 return x
-
-            }
-            private fun deleteLastCharacter() {
-                val currentText = tvInput.text.toString()
-                if (currentText.isNotEmpty() && currentText != "0") {
-                    val newText = currentText.substring(0, currentText.length - 1)
-                    tvInput.text = if (newText.isEmpty()) "0" else newText
-                }
-                // Actualizar estados
-                lastNumeric = tvInput.text.toString().lastOrNull()?.isDigit() == true
-                lastDot = tvInput.text.toString().endsWith(".")
             }
         }.parse()
     }
