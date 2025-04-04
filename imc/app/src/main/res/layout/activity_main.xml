@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:layout_width="match_parent"
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="24dp"
@@ -53,11 +52,13 @@
         android:layout_below="@id/etHeight"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:hint="Calcular IMC"
-        android:padding="14dp"
+        android:text="Calcular IMC"
+        android:padding="10dp"
         android:textAlignment="center"
+        android:textSize="20sp"
+        android:backgroundTint="@color/colorPrimary"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        app:cornerRadius="15dp"/>
 
     <TextView
         android:id="@+id/tvResult"
@@ -75,6 +76,7 @@
         android:text="Categoría: "
         android:layout_below="@+id/tvResult"
         android:textSize="22sp"
+        android:textStyle="bold"
         android:layout_marginTop="16dp"/>
 
 
